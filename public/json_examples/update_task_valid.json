@@ -1,0 +1,9 @@
+{
+  "data": {
+    "type": "tasks",
+    "attributes": {
+      "title": "Manchester by the sea",
+      "status": 2
+    }
+  }
+}

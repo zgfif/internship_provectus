@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: pro_planner_development
+  pool: 5
+  username: <db_username>
+  password: <db_password>
+  host: localhost
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: pro_planner_test
+
+production:
+  <<: *default
+  database: pro_planner_production

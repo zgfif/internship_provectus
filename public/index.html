@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PROP_46</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  AUTH_URL = 'https://apis.google.com/js/client:plus.js?onload=gpAsyncInit',
+    CLIENT_ID = '186649870077-vrb6g8dg8vp38on5uqki9lsg2jm3gvjr.apps.googleusercontent.com',
+    USER_DATA = 'https://www.googleapis.com/auth/calendar email profile',
+    CALLBACK_URL = 'http://backend.proplanner.formula1.cloud.provectus-it.com/auth/google_oauth2/callback';
+  $(() => $.ajax({
+    url: AUTH_URL,
+    dataType: 'script',
+    cache: true
+  })
+  );
+
+  window.gpAsyncInit = () => {
+    gapi.auth.authorize({
+      immediate: true,
+      response_type: 'code',
+      cookie_policy: 'none',
+      client_id: CLIENT_ID,
+      scope: USER_DATA
+    }, response => console.log(`intialization: ${response}`));
+
+    $('.googleplus-login').click(e => {
+      e.preventDefault();
+
+    gapi.auth.authorize({
+      immediate: false,
+      response_type: 'code',
+      cookie_policy: 'none',
+      client_id: CLIENT_ID,
+      scope: USER_DATA
+    }, response => {
+      if (response && !response.error) {
+        $.ajax({
+          url: CALLBACK_URL,
+          data: response,
+          success: data => console.log(data)
+        });
+      } else {
+        console.log('failed');
+      }
+    });
+  });
+  };
+</script>
+<a href="#" class="googleplus-login"> Sign-in with Google </a>
+</body>
+</html>

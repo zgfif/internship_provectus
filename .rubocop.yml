@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - 'bin/**/*'
+    - 'lib/*'
+    - 'config.ru'
+    - 'Rakefile'
+Bundler/OrderedGems:
+  Enabled: false
+Documentation:
+  Enabled: false

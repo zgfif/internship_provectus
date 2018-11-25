@@ -1,0 +1,14 @@
+{
+  "data": {
+    "type": "events",
+    "attributes": {
+      "title": "Hello Kitten",
+      "description": "Test Event",
+      "location": "Dreamland, 2",
+      "priority": "low",
+      "event_type": "personal",
+      "start_date": "2018-08-19T13:05:17+03:00",
+      "end_date": "2018-08-19T14:05:17+03:00"
+    }
+  }
+}

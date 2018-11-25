@@ -1,0 +1,15 @@
+{
+  "data": {
+    "type": "events",
+    "id": "1",
+    "attributes": {
+      "title": 0,
+      "description": 0,
+      "location": 0,
+      "priority": "",
+      "event_type": "",
+      "start_date": 0,
+      "end_date": 0
+    }
+  }
+}

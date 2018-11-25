@@ -1,0 +1,18 @@
+{
+  "data": {
+    "type": "goals",
+    "attributes": {
+      "title": "Learn English",
+      "description": "Test Goal",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKqsbK6o2UMtJYTZrpE4Bs9cRY0KxwCXy5NS6js2XzMCOD7lzG",
+      "start_date": "2018-08-19T13:05:17+03:00",
+      "end_date": "2018-08-19T14:05:17+03:00",
+      "goal_type": "work",
+      "s": "bla",
+      "m": "cool",
+      "a": "step",
+      "r": "to stars",
+      "t": "good"
+    }
+  }
+}
