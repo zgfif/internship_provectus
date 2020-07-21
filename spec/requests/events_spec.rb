@@ -40,14 +40,14 @@ RSpec.describe 'Events', type: :request do
       local_params = create_valid_request_params
       post goal_events_path(goal_id: test_goal.to_param), params: local_params
       expect(response).to have_http_status(:created)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
 
     it 'with invalid params renders a JSON response with errors for the new event' do
       local_params = create_invalid_request_params
       post goal_events_path(goal_id: test_goal.to_param), params: local_params
       expect(response).to have_http_status(:bad_request)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
   end
 
@@ -58,14 +58,14 @@ RSpec.describe 'Events', type: :request do
       local_params = update_valid_request_params
       patch goal_event_path(goal_id: test_goal.to_param, id: test_event.to_param), params: local_params
       expect(response).to have_http_status(:ok)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
 
     it 'renders a JSON response with errors for the event' do
       local_params = update_invalid_request_params
       patch goal_event_path(goal_id: test_goal.to_param, id: test_event.to_param), params: local_params
       expect(response).to have_http_status(:conflict)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
   end
 

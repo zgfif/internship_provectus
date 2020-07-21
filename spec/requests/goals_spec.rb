@@ -35,14 +35,14 @@ RSpec.describe 'Goals', type: :request do
       local_params = create_valid_request_params
       post goals_path, params: local_params
       expect(response).to have_http_status(:created)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
 
     it 'with invalid params renders a JSON response with errors for the new goal' do
       local_params = create_invalid_request_params
       post goals_path, params: local_params
       expect(response).to have_http_status(:conflict)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
   end
 
@@ -51,14 +51,14 @@ RSpec.describe 'Goals', type: :request do
       local_params = update_valid_request_params
       patch goal_path(id: test_goal.to_param), params: local_params
       expect(response).to have_http_status(:ok)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
 
     it 'renders a JSON response with errors for the goal' do
       local_params = update_invalid_request_params
       patch goal_path(id: test_goal.to_param), params: local_params
       expect(response).to have_http_status(:conflict)
-      expect(response.content_type).to eq('application/vnd.api+json')
+      expect(response.media_type).to eq('application/vnd.api+json')
     end
   end
 
